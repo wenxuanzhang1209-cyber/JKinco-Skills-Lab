@@ -1,2 +1,2 @@
 # JKinco-Skills-Lab
-SKills series
+Useful SKills for SRIBS employees
