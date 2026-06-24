@@ -1,0 +1,4 @@
+interface:
+  display_name: "上海建科公文编制"
+  short_description: "依照公司现行样本起草、排版并校核通知、制度文件、党委红头文件及附件表单"
+  default_prompt: "Use $shanghai-jianke-official-doc to draft and format an official company notice from my source materials."
