@@ -1,0 +1,4 @@
+interface:
+  display_name: "上海建科咨询集团品牌海报"
+  short_description: "复用青年手绘城市工程风格，生成统一画风、人物、排版与文案的品牌海报"
+  default_prompt: "Use $shanghai-jianke-poster to create a Shanghai Jianke Consulting Group poster from my campaign brief."
