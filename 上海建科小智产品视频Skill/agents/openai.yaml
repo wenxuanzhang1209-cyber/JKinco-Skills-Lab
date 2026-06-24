@@ -1,0 +1,4 @@
+interface:
+  display_name: "上海建科小智产品视频"
+  short_description: "锁定小智角色形象，策划并生成统一品牌风格的产品宣传视频"
+  default_prompt: "Use $xiaozhi-product-video to create a product video starring the approved Xiaozhi mascot."
