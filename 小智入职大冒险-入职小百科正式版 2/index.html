@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#07339f" />
-  <title>小智入职大冒险｜建科咨询新员工入职小百科</title>
+  <title>小智入职大冒险</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,13 +16,13 @@
       <img class="brand-logo" src="assets/shanghai-jianke-logo.png" alt="上海建科 SRIBS" />
       <div>
         <strong>新员工成长中心</strong>
-        <span>小智入职大冒险</span>
+        <span>小智入职大冒险 · <em id="brandEdition">2026年8月版</em></span>
       </div>
     </div>
     <div class="status">
       <div class="streak-pill" id="streakPill">🔥 连击 0</div>
       <div class="status-item"><span>成长值</span><b id="xpText">0</b></div>
-      <div class="xp-track"><i id="xpBar"></i></div>
+      <div class="xp-track" role="progressbar" aria-label="成长值进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="xpBar"></i></div>
       <button class="ghost-btn" id="handbookBtn">入职小百科 <em id="handbookCount">0</em></button>
     </div>
   </header>
@@ -32,24 +32,28 @@
       <div class="welcome-copy">
         <div class="eyebrow">NEW EMPLOYEE QUEST · 2026</div>
         <h1>小智入职<br /><span>大冒险</span></h1>
-        <p class="lead">跟随小智探索六大成长站点，在真实入职情景中读懂公司文化、办事流程、考勤休假、薪酬福利与成长生活。</p>
-        <div class="notice"><b>内容依据</b> 题库源自《建科咨询新员工入职小百科》，实际办理以公司现行正式文件及通知为准。</div>
+        <p class="lead">跟随小智探索六大成长站点，在真实入职情景中读懂办事流程、考勤休假、培训发展、薪酬福利、落户政策与社群生活。</p>
+        <div class="notice"><b>内容依据</b> 题库源自公司《入职小百科》（2026年8月版），实际办理以现行正式文件及通知为准。</div>
         <label class="name-field">
           <span>冒险者姓名</span>
-          <input id="playerName" maxlength="12" placeholder="输入你的名字" />
+          <input id="playerName" maxlength="12" placeholder="输入你的名字" autocomplete="off" />
         </label>
-        <button class="primary-btn" id="startBtn">领取工牌，开始探索 <span>→</span></button>
+        <div class="start-actions">
+          <button class="primary-btn" id="startBtn">领取工牌，开始探索 <span aria-hidden="true">→</span></button>
+          <button class="ghost-btn resume-btn" id="resumeBtn" hidden>继续上次进度</button>
+        </div>
         <div class="quick-facts">
-          <span>⏱ 约 15 分钟</span>
-          <span>🏅 6 枚徽章</span>
-          <span>📖 18 条知识</span>
+          <span>⏱ 约 <b id="factMinutes">20</b> 分钟</span>
+          <span>🏅 <b id="factBadges">6</b> 枚徽章</span>
+          <span>📖 <b id="factKnowledge">25</b> 条知识</span>
+          <span>🧭 <b id="factQuestions">29</b> 道情景题</span>
         </div>
       </div>
       <div class="hero-visual">
         <div class="city-lines"></div>
         <div class="hero-card">
           <span class="speech">你好！我是你的入职向导小智 👋</span>
-          <img src="assets/xiaozhi.png" alt="小智品牌角色" />
+          <img src="assets/xiaozhi-hero.png" alt="小智品牌角色" />
         </div>
         <div class="float-card fc-one"><b>城市建设</b><span>让专业服务城市</span></div>
         <div class="float-card fc-two"><b>数字创新</b><span>让技术创造价值</span></div>
@@ -61,7 +65,7 @@
         <div>
           <div class="eyebrow">WELCOME, <span id="playerLabel">新同事</span></div>
           <h2>你的入职探索地图</h2>
-          <p>选择任意已解锁站点。每站完成 3 个情景任务，即可获得专属徽章。</p>
+          <p>选择任意站点开始。完成一站的全部情景任务，即可获得专属徽章。</p>
         </div>
         <div class="mission-summary">
           <div><b id="badgeCount">0</b><span>/ 6 徽章</span></div>
@@ -71,10 +75,13 @@
       <div class="map-grid" id="mapGrid"></div>
       <div class="map-footer">
         <div class="guide-mini">
-          <img src="assets/xiaozhi.png" alt="" />
-          <p id="guideMessage">从“认识建科”开始，会更容易理解后面的任务。</p>
+          <img src="assets/xiaozhi-avatar.png" alt="" />
+          <p id="guideMessage">从“报到办事处”开始，会更容易理解后面的任务。</p>
         </div>
-        <button class="final-btn" id="finalBtn" disabled>终极入职挑战 🔒</button>
+        <div class="map-footer-actions">
+          <button class="ghost-btn" id="resetBtn">清空进度</button>
+          <button class="final-btn" id="finalBtn" disabled>终极入职挑战 🔒</button>
+        </div>
       </div>
     </section>
 
@@ -88,7 +95,7 @@
           <p id="stationIntro"></p>
           <div class="step-dots" id="stepDots"></div>
           <div class="xiaozhi-tip">
-            <img src="assets/xiaozhi.png" alt="" />
+            <img src="assets/xiaozhi-avatar.png" alt="" />
             <p id="xiaozhiTip"></p>
           </div>
         </aside>
@@ -101,8 +108,8 @@
             </div>
           </div>
           <h3 id="questionText"></h3>
-          <div class="options" id="options"></div>
-          <div class="feedback" id="feedback">
+          <div class="options" id="options" role="group" aria-label="选项"></div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite">
             <div class="feedback-icon" id="feedbackIcon"></div>
             <div>
               <b id="feedbackTitle"></b>
@@ -111,7 +118,8 @@
               <div class="source-note" id="sourceNote"></div>
             </div>
           </div>
-          <button class="primary-btn next-btn" id="nextBtn">继续 <span>→</span></button>
+          <button class="primary-btn next-btn" id="nextBtn">继续 <span aria-hidden="true">→</span></button>
+          <p class="key-hint">键盘：<kbd>1</kbd>–<kbd>4</kbd> 选择 · <kbd>Enter</kbd> 继续 · <kbd>H</kbd> 求助</p>
         </article>
       </div>
     </section>
@@ -120,7 +128,7 @@
       <div class="final-wrap">
         <div class="eyebrow">FINAL ONBOARDING CHALLENGE</div>
         <h2>终极入职挑战</h2>
-        <p>把六个站点学到的知识串联起来，完成最后的工作日模拟。</p>
+        <p>把六个站点学到的知识串联起来，完成最后的综合情景判断。</p>
         <div class="final-scenario" id="finalScenario"></div>
       </div>
     </section>
@@ -132,35 +140,47 @@
         <div class="eyebrow">ONBOARDING QUEST COMPLETED</div>
         <h2><span id="resultName"></span>，欢迎加入！</h2>
         <p id="resultCopy"></p>
+        <div class="result-rank" id="resultRank"></div>
         <div class="result-stats">
           <div><b id="resultXp"></b><span>成长值</span></div>
+          <div><b id="resultAccuracy"></b><span>正确率</span></div>
           <div><b id="resultBadges"></b><span>成长徽章</span></div>
           <div><b id="resultKnowledge"></b><span>手册知识</span></div>
         </div>
         <div class="badge-rack" id="badgeRack"></div>
+        <div class="mistake-review" id="mistakeReview"></div>
         <div class="certificate">
           <span>上海建科新员工成长中心 · 游戏结业纪念</span>
           <strong>让专业创造价值，让成长连接未来</strong>
         </div>
         <div class="result-actions">
           <button class="primary-btn" id="reviewBtn">查看我的员工手册</button>
+          <button class="ghost-btn" id="copyBtn">复制成绩单</button>
           <button class="ghost-btn" id="restartBtn">重新挑战</button>
         </div>
       </div>
     </section>
   </main>
 
-  <dialog id="handbookDialog">
+  <footer class="site-foot">
+    <span>内容依据公司《入职小百科》（2026年8月版）整理，用于新员工入职学习。</span>
+    <span>已脱敏：不含账号密码、内网地址、办公与个人电话、个人邮箱及人员名单。</span>
+  </footer>
+
+  <dialog id="handbookDialog" aria-label="我的入职小百科">
     <div class="dialog-head">
-      <div><span class="eyebrow">MY ONBOARDING WIKI</span><h2>我的入职小百科</h2></div>
+      <div><span class="eyebrow">MY ONBOARDING WIKI</span><h2>我的入职小百科 <em id="handbookProgress"></em></h2></div>
       <button id="closeHandbook" aria-label="关闭">×</button>
+    </div>
+    <div class="handbook-search">
+      <input id="handbookSearch" type="search" placeholder="搜索关键词，例如：年休假、公积金、居转户" autocomplete="off" />
     </div>
     <div class="handbook-filter" id="handbookFilter"></div>
     <div class="handbook-list" id="handbookList"></div>
-    <div class="dialog-note">内容依据《建科咨询新员工入职小百科》整理，仅用于入职学习；具体执行口径以公司现行制度及正式通知为准。</div>
+    <div class="dialog-note">内容依据公司《入职小百科》（2026年8月版）整理，仅用于入职学习；具体执行口径以公司现行制度及正式通知为准。</div>
   </dialog>
 
-  <dialog id="eventDialog" class="event-dialog">
+  <dialog id="eventDialog" class="event-dialog" aria-label="职场奇遇卡">
     <div class="event-stage">
       <div class="eyebrow">RANDOM OFFICE EVENT</div>
       <h2>抽一张职场奇遇卡</h2>
@@ -176,7 +196,7 @@
     </div>
   </dialog>
 
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="content.js"></script>
   <script src="advanced-content.js"></script>
   <script src="game.js"></script>
