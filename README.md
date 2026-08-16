@@ -5,6 +5,8 @@
 
 # JKinco Skills Lab
 
+> **English overview** · Reusable AI skills that turn repetitive brand-design work into callable workflows: structured drafts, image/video prompts, and quality-check results.
+
 一套可复用的 AI 技能（Skills）集合，把重复的品牌设计工作固化为可调用的工作流：输入需求，输出结构稿、提示词、质检结果。
 
 ## 包含的技能
