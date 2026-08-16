@@ -1,3 +1,8 @@
+<p align="left">
+  <img src="https://img.shields.io/github/license/wenxuanzhang1209-cyber/JKinco-Skills-Lab" />
+  <img src="https://img.shields.io/github/v/release/wenxuanzhang1209-cyber/JKinco-Skills-Lab?label=release" />
+</p>
+
 # JKinco Skills Lab
 
 一套可复用的 AI 技能（Skills）集合，把重复的品牌设计工作固化为可调用的工作流：输入需求，输出结构稿、提示词、质检结果。
