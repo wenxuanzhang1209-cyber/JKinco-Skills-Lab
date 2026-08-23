@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: JKinco Listen (flagship)
+    url: https://github.com/wenxuanzhang1209-cyber/jkinco-listen-open
+    about: The flagship project in this family — local-first AI meeting minutes.

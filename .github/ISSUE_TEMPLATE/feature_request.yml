@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a feature or improvement / 提出一个新功能或改进
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese are both fine. 中英文皆可。
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve? / 想解决什么问题
+      description: One sentence on the situation you are in. / 一句话说清楚使用场景。
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution / 期望的解决方案
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / 备选方案

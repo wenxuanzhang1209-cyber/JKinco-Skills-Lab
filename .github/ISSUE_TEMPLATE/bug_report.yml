@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a reproducible problem / 提交一个可复现的问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English or Chinese are both fine. 中英文皆可。
+  - type: textarea
+    id: describe
+    attributes:
+      label: What happened? / 问题描述
+      description: What did you see, and what did you expect instead? / 发生了什么？预期是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce / 复现步骤
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment / 运行环境
+      description: OS, runtime version, and how you installed it
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots / 日志或截图
+      description: Redact anything sensitive first. / 请先抹掉敏感信息。
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Confirmation / 自查
+      options:
+        - label: I have not included any secret or token in this issue. / 我没有在 Issue 中提交任何密钥或 Token。
+          required: true
