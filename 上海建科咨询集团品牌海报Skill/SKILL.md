@@ -54,6 +54,8 @@ description: 为上海建科咨询集团策划和生成统一品牌风格的中�
 - `后期排版清单`：字体层级、颜色、二维码留白、Logo 与版权素材位置。
 - `质检报告`：逐项对照 [quality-checklist.md](references/quality-checklist.md)。
 
+写 `主绘图提示词` 和 `负面提示词` 前先读取 [prompt-templates.md](references/prompt-templates.md)，按里面的结构填，不要临场自拟句式——换一次句式，出图风格就漂一次。
+
 需要扣子等平台可直接粘贴的系统提示词时，读取 [coze-system-prompt.md](references/coze-system-prompt.md)。
 
 ## 人物连续性

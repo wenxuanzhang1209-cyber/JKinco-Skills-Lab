@@ -1,0 +1,25 @@
+name: CI
+
+# 这个仓库原先没有 CI。它装的是「让输出不再每次都漂」的技能，
+# 而技能的价值全在它读的那些参考文件里：品牌视觉规范、角色设定、
+# 质检清单。任何一个被改名或删掉，都不会报错 —— 智能体读不到就自己
+# 编一个，输出看起来照样像模像样，只是不再是同一套品牌了。
+#
+# 那正是这个仓库要解决的问题的反面，所以值得有一道检查。
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Skills are complete
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate skills
+        run: python scripts/validate_skills.py
