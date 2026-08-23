@@ -1,0 +1,10 @@
+# 保持依赖更新，避免安全修复被一次大升级挡住。
+# Keep dependencies current so security fixes are not blocked behind a large upgrade.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    commit-message:
+      prefix: "ci"
